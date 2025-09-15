@@ -30,9 +30,6 @@ node_modules
 /backend/node_modules
 
 
-.env.local
-/backend/.env
-
 .DS_Store
 *.log
 npm-debug.log*
