@@ -29,7 +29,7 @@ export const FinancialRecordsProvider = ({
 
     const fetchRecords = async() =>{
         if(!user) return;
-        const response = await fetch(`http://localhost:3001/financial-records/getAllByUserID/${user.id}`);
+        const response = await fetch(`https://backend-tracker-vtkr.onrender.com/financial-records/getAllByUserID/${user.id}`);
 
         if(response.ok){
             const records = await response.json();
@@ -43,7 +43,7 @@ export const FinancialRecordsProvider = ({
     }, [user])
 
     const addRecord = async (record: FinancialRecord) =>{
-        const response = await fetch("http://localhost:3001/financial-records", {
+        const response = await fetch("https://backend-tracker-vtkr.onrender.com/financial-records", {
             method: "POST",
             body: JSON.stringify(record),
             headers:{
@@ -64,7 +64,7 @@ export const FinancialRecordsProvider = ({
 
       const updateRecord = async (id: string, newRecord: FinancialRecord) =>{
         // if(!user) return;
-        const response = await fetch(`http://localhost:3001/financial-records/${id}`, {
+        const response = await fetch(`https://backend-tracker-vtkr.onrender.com/financial-records/${id}`, {
             method: "PUT",
             body: JSON.stringify(newRecord),
             headers:{
@@ -90,7 +90,7 @@ export const FinancialRecordsProvider = ({
 
 
     const deleteRecord = async (id: string) =>{
-        const response = await fetch(`http://localhost:3001/financial-records/${id}`, {
+        const response = await fetch(`https://backend-tracker-vtkr.onrender.com/financial-records/${id}`, {
             method: "DELETE",
         });
 
